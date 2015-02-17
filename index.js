@@ -14,6 +14,10 @@ app.get('/', function(request, response) {
   response.send(result);
 });
 
+app.get('/shiva', function(request, response){
+	response.send("Om Namaha Shivaya!");
+});
+
 app.get('/db', function(request, response){
 	pg.connect(process.env.DATABASE_URL, function(err, client, done){
 		client.query('SELECT * FROM test_table', function(err, result){
